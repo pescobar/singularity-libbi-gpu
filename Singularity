@@ -4,6 +4,9 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
 %environment
     LC_ALL=C
     export LC_ALL
+    # workaround for https://stackoverflow.com/a/30663908
+    CXX="g++ -std=c++11"
+    export CXX
     
 %post
     export LC_ALL=C
